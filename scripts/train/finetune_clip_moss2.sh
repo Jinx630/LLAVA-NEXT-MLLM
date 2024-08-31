@@ -21,7 +21,7 @@ ACCELERATE_CPU_AFFINITY=1 torchrun --nproc_per_node=4 --nnodes=1 --node_rank=0 -
     --deepspeed scripts/zero3.json \
     --model_name_or_path ${LLM_VERSION} \
     --version ${PROMPT_VERSION} \
-    --data_path ./playground/data/stage2_train_0828_v3_358k_images.json \
+    --data_path ./playground/data/stage2_train_0828_v3_358k.json \
     --image_folder ./playground/data \
     --pretrain_mm_mlp_adapter="./checkpoints/projectors/llava-moss2-pretrain-reproduction/checkpoint-4361/mm_projector.bin" \
     --mm_tunable_parts="mm_vision_tower,mm_mlp_adapter,mm_language_model" \
@@ -33,7 +33,7 @@ ACCELERATE_CPU_AFFINITY=1 torchrun --nproc_per_node=4 --nnodes=1 --node_rank=0 -
     --mm_use_im_patch_token False \
     --group_by_modality_length True \
     --image_aspect_ratio anyres \
-    --image_grid_pinpoints "[(336, 672),(672, 336),(672, 672)]" \
+    --image_grid_pinpoints "[(336, 672), (672, 336), (672, 672), (1008, 336), (336, 1008)]" \
     --mm_patch_merge_type spatial_unpad \
     --bf16 True \
     --run_name llava-moss2-finetune-reproduction-tmp \

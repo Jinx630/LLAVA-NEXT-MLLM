@@ -16,6 +16,6 @@ pip install -e .
 
 #### 3. **training:**
 ```bash
-stage1: bash scripts/train/pretrain_clip_moss.sh
-stage2: bash scripts/train/finetune_clip_moss.sh
+stage1: bash scripts/train/pretrain_clip_moss2.sh
+stage2: bash scripts/train/finetune_clip_moss2.sh
 ```
